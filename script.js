@@ -22,13 +22,13 @@ function isPalindrome(wordToCheck) {
 const btnCheck = document.querySelector('.check');
 const output = document.querySelector('#output');
 
-const userWordInput = document.querySelector('#user-word').value.replace(/\s/g,'');
+const userWordInput = document.querySelector('#user-word');
 
 btnCheck.addEventListener('click', function(){
 
     //se fuori da event listener non aggiorna l'output
     //
-    let userWord = userWordInput.value;
+    let userWord = userWordInput.value.replace(/\s/g,'');
 
     if (isPalindrome(userWord)) {
         output.innerHTML = 'la parola e palindroma';
@@ -61,11 +61,14 @@ function isEven(nunmberToCheck){
 
 const btnCheck2 = document.querySelector('.check2');
 const output2 = document.querySelector('#output2');
+const userGuessInput = document.querySelector('#user-guess');
+const userNumberInput = document.querySelector('#user-number');
 
 btnCheck2.addEventListener('click', function(){
-    const userGuess = document.querySelector('#user-guess').value;
-    const userNumber = parseInt(document.querySelector('#user-number').value);
     const generatedNumber = randomNumber(1, 5);
+    let userGuess = userGuessInput.value;
+    let userNumber = parseInt(userNumberInput.value);
+
 
     let guessEven;
     let finalNumber = 0;
