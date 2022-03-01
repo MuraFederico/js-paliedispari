@@ -24,7 +24,7 @@ const output = document.querySelector('#output');
 
 
 btnCheck.addEventListener('click', function(){
-    let userWord = document.querySelector('#user-word').value;
+    let userWord = document.querySelector('#user-word').value.replace(/\s/g,'');
 
     if (isPalindrome(userWord)) {
         output.innerHTML = 'la parola e palindroma';
@@ -33,7 +33,7 @@ btnCheck.addEventListener('click', function(){
     }
 
     userWord.value = '';
-    // console.log(userWord)
+    
 })
 
 
