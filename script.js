@@ -16,19 +16,19 @@ function isPalindrome(wordToCheck) {
         indexMirror -= 1;    
     }
     return result;
-}
+};
 
 
 const btnCheck = document.querySelector('.check');
 const output = document.querySelector('#output');
 
+const userWordInput = document.querySelector('#user-word').value.replace(/\s/g,'');
 
 btnCheck.addEventListener('click', function(){
-    
-    //se fuori da event listener non aggiorna l'output
-    let userWord = document.querySelector('#user-word').value.replace(/\s/g,'');
-    //
 
+    //se fuori da event listener non aggiorna l'output
+    //
+    let userWord = userWordInput.value;
 
     if (isPalindrome(userWord)) {
         output.innerHTML = 'la parola e palindroma';
@@ -36,7 +36,7 @@ btnCheck.addEventListener('click', function(){
         output.innerHTML = 'la parola non e palindroma';
     }
 
-    userWord.value = '';
+    
     
 })
 
