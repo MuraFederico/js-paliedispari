@@ -24,7 +24,11 @@ const output = document.querySelector('#output');
 
 
 btnCheck.addEventListener('click', function(){
+    
+    //se fuori da event listener non aggiorna l'output
     let userWord = document.querySelector('#user-word').value.replace(/\s/g,'');
+    //
+
 
     if (isPalindrome(userWord)) {
         output.innerHTML = 'la parola e palindroma';
